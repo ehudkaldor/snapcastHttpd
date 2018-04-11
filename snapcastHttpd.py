@@ -77,6 +77,11 @@ class SnapCastHttp(BaseHTTPRequestHandler):
     def do_HEAD(self):
         self._set_headers()
         self.send_response(400)
+	
+    def do_OPTIONS(self):
+        self.send_header('Access-Control-Allow-Methods', 'POST')
+        self._set_headers()
+        self.send_response(400)
 
     def do_POST(self):
         content_length = int(self.headers['Content-Length']) # <--- Gets the size of data
