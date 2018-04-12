@@ -40,7 +40,7 @@ VERSION = "0.0.1"
 AUTHOR="SW Engineer: Garzola Marco"
 
 parser = argparse.ArgumentParser()
-parser.add_argument("-d","--debug", action="store_true", default= False, help="add verbosity")
+parser.add_argument("-d","--debug", action="store_true", default= True, help="add verbosity")
 parser.add_argument("-p","--port", nargs = 1, metavar =("Daemon Listening port"), help="default is " + str(DEFAULT_LISTENPORT))
 parser.add_argument("-s","--snapcastPort", nargs = 1, metavar =("snapcast port"), help="snapcast port")
 parser.add_argument("-l","--log", nargs = 1, metavar =("log File"), default= False, help=" path file to save log")
