@@ -102,18 +102,16 @@ class SnapCastHttp(BaseHTTPRequestHandler):
 	telnet= self.server.context
         if telnet is None :
 		log.error("telnet obj is NONE!")
-	else
-			log.info ('got telnet')
     	jobj = json.loads(j)
-	log.info ('json.loads: ' + jobj)
+#	log.info ('json.loads: ' + jobj)
 
     	file = j.replace('\n', '')
-	log.info ('file: ' + file)
-    	log.debug(file  + "\r\n")
+#	log.info ('file: ' + file)
+#    	log.debug(file  + "\r\n")
     	requestId = jobj['id']
     	telnet.write( file + "\r\n")
     	while (True):
-		log.info ('Still true ')
+#		log.info ('Still true ')
         	response = telnet.read_until("\r\n", 2)
         	jResponse = json.loads(response)
         	if 'id' in jResponse:
